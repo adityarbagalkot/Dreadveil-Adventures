@@ -1,0 +1,1077 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --font-display: "IM Fell English SC", Georgia, serif;
+  --font-body: "Spectral", Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-parchment: var(--parchment);
+  --color-parchment-foreground: var(--parchment-foreground);
+  --color-bronze: var(--bronze);
+  --color-candle: var(--candle);
+  --color-teal: var(--teal);
+  --color-blood: var(--blood);
+  --color-venom: var(--venom);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.16 0.02 210);
+  --foreground: oklch(0.88 0.03 80);
+  --card: oklch(0.21 0.02 210);
+  --card-foreground: oklch(0.88 0.03 80);
+  --popover: oklch(0.21 0.02 210);
+  --popover-foreground: oklch(0.88 0.03 80);
+  --primary: oklch(0.66 0.09 65);
+  --primary-foreground: oklch(0.16 0.02 60);
+  --secondary: oklch(0.27 0.025 210);
+  --secondary-foreground: oklch(0.88 0.03 80);
+  --muted: oklch(0.25 0.02 210);
+  --muted-foreground: oklch(0.75 0.025 75);
+  --accent: oklch(0.3 0.04 200);
+  --accent-foreground: oklch(0.9 0.04 80);
+  --destructive: oklch(0.55 0.16 28);
+  --destructive-foreground: oklch(0.95 0.02 80);
+  --border: oklch(0.38 0.04 70);
+  --input: oklch(0.38 0.04 70);
+  --ring: oklch(0.78 0.12 75);
+  --parchment: oklch(0.84 0.04 78);
+  --parchment-foreground: oklch(0.24 0.03 55);
+  --bronze: oklch(0.6 0.08 60);
+  --candle: oklch(0.82 0.13 75);
+  --teal: oklch(0.32 0.05 205);
+  --blood: oklch(0.5 0.16 25);
+  --venom: oklch(0.62 0.15 135);
+
+  --gradient-veil: radial-gradient(
+    ellipse at 50% 20%,
+    oklch(0.28 0.05 200 / 0.9),
+    oklch(0.12 0.02 215) 70%
+  );
+  --gradient-iron: linear-gradient(180deg, oklch(0.26 0.015 220), oklch(0.17 0.015 220));
+  --gradient-bronze: linear-gradient(180deg, oklch(0.72 0.1 70), oklch(0.5 0.08 55));
+  --shadow-candle: 0 0 0 2px var(--candle), 0 0 24px 4px oklch(0.82 0.13 75 / 0.55);
+  --paper-muted: oklch(0.41 0.035 65);
+  --paper-edge: oklch(0.57 0.065 65);
+  --table: oklch(0.22 0.025 195);
+  --guard-accent: oklch(0.75 0.09 185);
+  --ink-strike: oklch(0.39 0.12 25);
+  --ink-guard: oklch(0.34 0.06 190);
+  --shadow-die: 0 5px 0 var(--paper-edge), 0 9px 16px oklch(0 0 0 / 0.3);
+  --shadow-frame: inset 0 0 0 1px oklch(0.5 0.06 65 / 0.6), 0 10px 40px -10px oklch(0 0 0 / 0.8);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html,
+  body {
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+  body {
+    background: var(--gradient-veil);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+  }
+  #main-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0;
+  }
+}
+
+@utility iron-frame {
+  background: var(--gradient-iron);
+  box-shadow: var(--shadow-frame);
+  border: 1px solid oklch(0.45 0.05 65 / 0.7);
+}
+
+@utility parchment {
+  background-color: var(--parchment);
+  color: var(--parchment-foreground);
+  background-image: radial-gradient(ellipse at center, transparent 55%, oklch(0.55 0.06 60 / 0.45));
+}
+
+@utility candle-glow {
+  box-shadow: var(--shadow-candle);
+}
+
+@utility btn-bronze {
+  background: var(--gradient-bronze);
+  color: var(--primary-foreground);
+  font-family: var(--font-display);
+  border: 1px solid oklch(0.82 0.1 75 / 0.6);
+  box-shadow: 0 4px 14px -4px oklch(0 0 0 / 0.8);
+  &:hover:not(:disabled) {
+    filter: brightness(1.1);
+  }
+  &:disabled {
+    filter: grayscale(0.8) brightness(0.6);
+    cursor: not-allowed;
+  }
+}
+
+@utility btn-iron {
+  background: var(--gradient-iron);
+  color: var(--foreground);
+  font-family: var(--font-display);
+  border: 1px solid var(--border);
+  &:hover:not(:disabled) {
+    border-color: var(--candle);
+    color: var(--candle);
+  }
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.85;
+  }
+  55% {
+    opacity: 0.95;
+  }
+}
+@utility animate-flicker {
+  animation: flicker 3s ease-in-out infinite;
+}
+
+/* The bestiary and tabletop share the same materials, not dashboard panels. */
+/* The bestiary and tabletop share the same materials, not dashboard panels. */
+.game-shell {
+  width: 100%;
+  max-width: min(100%, 1720px);
+  margin-inline: auto;
+  padding: clamp(10px, 1.8vh, 22px) clamp(16px, 2.5vw, 40px) clamp(10px, 1.6vh, 20px);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.game-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: clamp(10px, 1.4vh, 16px);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.wordmark {
+  font-family: var(--font-display);
+  color: var(--candle);
+  font-size: clamp(20px, 2vw, 26px);
+}
+.eyebrow,
+.folio-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.eyebrow {
+  color: var(--bronze);
+}
+.folio-label {
+  color: var(--muted-foreground);
+}
+.page-heading {
+  padding: clamp(8px, 1.4vh, 18px) 0 clamp(6px, 1.1vh, 14px);
+  text-align: center;
+  flex-shrink: 0;
+}
+.page-heading h1 {
+  font-size: clamp(24px, 2.5vw, 40px);
+  line-height: 1.15;
+  margin-top: 2px;
+}
+.heading-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: clamp(4px, 0.8vh, 10px);
+  color: var(--bronze);
+}
+.heading-rule::before,
+.heading-rule::after {
+  content: "";
+  width: 72px;
+  height: 1px;
+  background: var(--border);
+}
+.bestiary-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(280px, 22vw, 350px);
+  gap: clamp(12px, 1.5vw, 22px);
+  align-items: stretch;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(8px, 1vw, 14px);
+  align-content: start;
+}
+.species-card {
+  position: relative;
+  background: var(--parchment);
+  color: var(--parchment-foreground);
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    border-color 160ms,
+    box-shadow 160ms,
+    transform 160ms;
+  text-align: left;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.species-card:hover {
+  border-color: var(--bronze);
+  transform: translateY(-2px);
+}
+.species-card[data-state="checked"] {
+  border-color: var(--candle);
+  box-shadow: 0 0 0 1px var(--candle);
+}
+.species-card:focus-visible {
+  outline: 3px solid var(--candle);
+  outline-offset: 4px;
+}
+.species-art {
+  aspect-ratio: 47 / 43;
+  width: 100%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--paper-edge);
+  flex-shrink: 0;
+}
+.species-card-copy {
+  position: relative;
+  padding: clamp(6px, 0.75vw, 10px);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+.species-number {
+  color: var(--paper-muted);
+  font-size: 10px;
+}
+.species-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: var(--ink-guard);
+}
+.species-card h2 {
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.2;
+  margin: 2px 0 3px;
+}
+.species-role {
+  font-size: clamp(10px, 0.75vw, 11px);
+  line-height: 1.35;
+  color: var(--paper-muted);
+}
+.species-signature {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: clamp(10px, 0.75vw, 11px);
+  line-height: 1.3;
+  border-top: 1px solid var(--paper-edge);
+  padding-top: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.species-signature svg {
+  flex-shrink: 0;
+}
+.bestiary-entry {
+  position: sticky;
+  top: clamp(10px, 1.4vh, 18px);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-height: calc(100dvh - clamp(110px, 14vh, 150px));
+  min-height: 0;
+}
+.entry-paper {
+  padding: clamp(12px, 1.6vh, 20px);
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--paper-edge) transparent;
+  overscroll-behavior: contain;
+  min-height: 0;
+}
+.parchment .eyebrow {
+  color: var(--paper-muted);
+}
+.entry-portrait {
+  width: clamp(80px, 7.5vw, 120px);
+  aspect-ratio: 47 / 43;
+  margin: clamp(6px, 1vh, 12px) auto;
+  border: 1px solid var(--paper-edge);
+  border-radius: 3px;
+  background-repeat: no-repeat;
+  animation: reveal 220ms ease-out;
+  flex-shrink: 0;
+}
+.entry-paper h2 {
+  font-size: clamp(24px, 2vw, 30px);
+  line-height: 1.1;
+}
+.entry-hybrid {
+  font-size: 13px;
+  font-style: italic;
+  margin: clamp(4px, 0.8vh, 8px) 0 4px;
+}
+.entry-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--paper-muted);
+}
+.entry-stats {
+  margin: clamp(10px, 1.4vh, 16px) 0;
+  padding: clamp(8px, 1vh, 12px) 0;
+  border-block: 1px solid var(--paper-edge);
+  display: grid;
+  gap: 8px;
+}
+.entry-stats div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+.entry-stats dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--paper-muted);
+}
+.entry-stats dd {
+  text-align: right;
+}
+.entry-ability h3 {
+  font-size: clamp(17px, 1.4vw, 21px);
+  margin: 4px 0;
+}
+.entry-ability p {
+  font-size: clamp(12px, 0.9vw, 13px);
+  line-height: 1.55;
+}
+.entry-empty {
+  font-size: clamp(48px, 5vw, 72px);
+  text-align: center;
+  padding: clamp(30px, 5vh, 60px) 0;
+  color: var(--paper-muted);
+}
+.entry-departure {
+  padding: clamp(12px, 1.5vh, 16px);
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  padding-top: clamp(12px, 1.5vh, 20px);
+  padding-bottom: clamp(10px, 1.5vh, 16px);
+  font-size: 11px;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+.encounter-shell {
+  max-width: min(100%, 1500px);
+}
+.encounter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: clamp(12px, 1.8vh, 22px) 0;
+  flex-shrink: 0;
+}
+.encounter-heading h1 {
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.2;
+  margin-top: 4px;
+}
+.round-seal {
+  flex-shrink: 0;
+  text-align: center;
+  padding-left: 20px;
+  border-left: 1px solid var(--border);
+}
+.round-seal strong {
+  display: block;
+  color: var(--candle);
+  font-family: var(--font-display);
+  font-size: clamp(28px, 2.5vw, 36px);
+  line-height: 1;
+  margin-top: 3px;
+}
+.encounter-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(360px, 1.08fr);
+  grid-template-areas:
+    "enemy player"
+    "journal player";
+  gap: clamp(14px, 1.6vw, 24px);
+  align-items: start;
+  flex: 1 1 auto;
+}
+.enemy-sheet {
+  grid-area: enemy;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.player-table {
+  grid-area: player;
+  display: flex;
+  flex-direction: column;
+}
+.enemy-art {
+  aspect-ratio: 16 / 9;
+  max-height: min(220px, 24vh);
+  background: var(--parchment);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.enemy-art img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.enemy-details {
+  padding: clamp(14px, 1.8vh, 22px);
+}
+.enemy-details h2 {
+  font-size: clamp(22px, 2vw, 29px);
+  line-height: 1.2;
+  margin: 4px 0 clamp(8px, 1.4vh, 16px);
+}
+.health-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.health-label > span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--muted-foreground);
+}
+.health-label strong {
+  font-size: 16px;
+}
+.health-label strong span {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 400;
+}
+.health-track {
+  height: 9px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: 2px;
+}
+.health-fill {
+  height: 100%;
+  transition: width 300ms ease-out;
+}
+.intent-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-block: 1px solid var(--border);
+  color: var(--candle);
+}
+.intent-badge > div {
+  flex: 1;
+}
+.intent-badge p {
+  font-size: 15px;
+  color: var(--foreground);
+}
+.intent-badge strong {
+  font-size: 26px;
+  text-align: center;
+}
+.intent-badge small {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+}
+.intent-dim {
+  margin-top: 8px;
+  color: var(--muted-foreground);
+}
+.player-sheet {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 18px);
+  padding-bottom: clamp(10px, 1.4vh, 18px);
+  border-bottom: 1px solid var(--border);
+}
+.player-portrait {
+  width: clamp(62px, 5vw, 76px);
+  aspect-ratio: 47 / 43;
+  border: 1px solid var(--bronze);
+  border-radius: 3px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+}
+.player-sheet h2 {
+  font-size: clamp(20px, 1.8vw, 26px);
+  margin: 2px 0 clamp(4px, 0.8vh, 10px);
+  line-height: 1.1;
+}
+.dice-table {
+  padding: clamp(10px, 1.4vh, 18px) 0;
+}
+.tray-heading,
+.journal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.tray-heading h2,
+.journal-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(17px, 1.4vw, 20px);
+}
+.dice-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.5vw, 20px);
+  min-height: clamp(120px, 15vh, 155px);
+  margin: clamp(6px, 1vh, 12px) 0;
+  background: var(--table);
+  border-bottom: 1px solid var(--border);
+}
+.die-control {
+  flex-direction: column;
+  gap: 10px;
+  background: transparent;
+  padding: 0;
+  border-radius: 5px;
+  min-width: 60px;
+}
+.die-control:focus-visible {
+  outline: none;
+}
+.die-control:focus-visible .die-face {
+  outline: 3px solid var(--candle);
+  outline-offset: 4px;
+}
+.die-face {
+  display: grid;
+  place-items: center;
+  width: clamp(60px, 5vw, 70px);
+  height: clamp(60px, 5vw, 70px);
+  background: var(--parchment);
+  border: 2px solid var(--paper-edge);
+  box-shadow: var(--shadow-die);
+  border-radius: 7px;
+  animation: cast 200ms ease-out;
+  transition: transform 120ms;
+}
+.die-control:hover .die-face {
+  transform: translateY(-2px);
+}
+.die-strike .die-face {
+  color: var(--ink-strike);
+}
+.die-guard .die-face {
+  color: var(--ink-guard);
+  border-color: var(--guard-accent);
+}
+.die-assignment {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: capitalize;
+  font-size: 12px;
+}
+.die-strike .die-assignment {
+  color: var(--candle);
+}
+.die-guard .die-assignment {
+  color: var(--guard-accent);
+}
+.pips {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+}
+.pips i {
+  background: currentColor;
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  align-self: center;
+  justify-self: center;
+}
+.pips-1 i {
+  grid-area: 2/2;
+}
+.pips-2 i:first-child,
+.pips-3 i:first-child,
+.pips-4 i:first-child,
+.pips-5 i:first-child,
+.pips-6 i:first-child {
+  grid-area: 1/1;
+}
+.pips-2 i:last-child,
+.pips-3 i:last-child {
+  grid-area: 3/3;
+}
+.pips-3 i:nth-child(2),
+.pips-5 i:nth-child(5) {
+  grid-area: 2/2;
+}
+.pips-4 i:nth-child(2),
+.pips-5 i:nth-child(2),
+.pips-6 i:nth-child(2) {
+  grid-area: 1/3;
+}
+.pips-4 i:nth-child(3),
+.pips-5 i:nth-child(3),
+.pips-6 i:nth-child(3) {
+  grid-area: 3/1;
+}
+.pips-4 i:nth-child(4),
+.pips-5 i:nth-child(4),
+.pips-6 i:nth-child(4) {
+  grid-area: 3/3;
+}
+.pips-6 i:nth-child(5) {
+  grid-area: 2/1;
+}
+.pips-6 i:nth-child(6) {
+  grid-area: 2/3;
+}
+.uncast-die {
+  width: 70px;
+  height: 70px;
+  border: 1px dashed var(--bronze);
+  border-radius: 7px;
+  color: var(--bronze);
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+}
+.roll-action {
+  display: flex;
+  justify-content: center;
+}
+.roll-action > * {
+  min-width: 230px;
+}
+.resolution-totals {
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  margin-bottom: 20px;
+}
+.resolution-totals span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.resolution-totals strong {
+  font-size: 24px;
+  color: var(--candle);
+}
+.turn-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.ability-strip {
+  border-block: 1px solid var(--border);
+  padding: 18px 0;
+}
+.ability-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--candle);
+}
+.ability-title h3 {
+  font-size: 20px;
+}
+.ability-strip > p {
+  font-size: 13px;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin: 10px 0 14px;
+}
+.ability-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.ability-bottom > span {
+  font-size: 12px;
+  color: var(--candle);
+}
+.combat-journal {
+  grid-area: journal;
+  margin-top: 0;
+  border-top: 1px solid var(--border);
+  padding-top: clamp(10px, 1.3vh, 16px);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.combat-journal ol {
+  max-height: clamp(130px, 18vh, 190px);
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-left: 17px;
+  padding-right: 8px;
+  border-left: 2px solid var(--bronze);
+  scrollbar-color: var(--bronze) var(--background);
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.combat-journal li {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 3px 6px;
+  border-radius: 2px;
+}
+.combat-journal .journal-latest {
+  color: var(--candle);
+  font-weight: 600;
+  background: oklch(0.82 0.13 75 / 0.08);
+  border-left: 2px solid var(--candle);
+  margin-left: -2px;
+}
+.battle-outcome {
+  text-align: center;
+  padding: 20px 0;
+}
+.outcome-symbol {
+  font-size: 40px;
+  color: var(--candle);
+}
+.battle-outcome h2 {
+  font-size: 44px;
+}
+.battle-outcome p {
+  margin: 10px 0 20px;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+.empty-encounter {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+}
+.empty-encounter h1 {
+  font-size: 36px;
+}
+a:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+}
+@keyframes reveal {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes cast {
+  from {
+    transform: translateY(-6px) rotate(-5deg);
+  }
+  to {
+    transform: translateY(0) rotate(0);
+  }
+}
+@media (max-width: 1199px) and (min-width: 960px) {
+  .game-shell {
+    padding: 12px 20px 14px;
+  }
+  .bestiary-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 12px;
+  }
+  .species-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 8px;
+  }
+  .encounter-layout {
+    grid-template-columns: minmax(290px, 0.9fr) minmax(320px, 1.1fr);
+    gap: 16px;
+  }
+  .enemy-art {
+    max-height: 200px;
+  }
+}
+@media (max-width: 1023px) {
+  .encounter-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .enemy-sheet {
+    order: 1;
+  }
+  .player-table {
+    order: 2;
+  }
+  .combat-journal {
+    order: 3;
+    margin-top: 14px;
+  }
+  .enemy-art {
+    aspect-ratio: 16 / 9;
+    max-height: 240px;
+  }
+}
+@media (max-width: 959px) {
+  .bestiary-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .bestiary-entry {
+    position: static;
+    max-height: none;
+    height: auto;
+    overflow: visible;
+  }
+  .species-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .game-shell {
+    padding: 10px 12px 14px;
+  }
+  .game-nav {
+    padding-bottom: 10px;
+  }
+  .folio-label {
+    display: none;
+  }
+  .wordmark {
+    font-size: 20px;
+  }
+  .page-heading {
+    padding: 10px 0 8px;
+  }
+  .page-heading h1 {
+    font-size: 24px;
+  }
+  .bestiary-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .species-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .species-card-copy {
+    padding: 6px 8px;
+  }
+  .species-card h2 {
+    font-size: 15px;
+  }
+  .species-role,
+  .species-signature {
+    font-size: 10.5px;
+  }
+  .bestiary-entry {
+    position: static;
+    margin-top: 8px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  .entry-paper {
+    padding: 14px;
+  }
+  .entry-departure {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    padding: 10px 16px max(10px, env(safe-area-inset-bottom));
+    border-top: 1px solid var(--bronze);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.6);
+    background: var(--card);
+  }
+  .entry-departure > span {
+    flex: 1;
+    font-size: 12px;
+  }
+  .entry-departure > .w-full {
+    width: auto;
+    min-width: 150px;
+  }
+  .bestiary-shell {
+    padding-bottom: 84px;
+  }
+  .game-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .encounter-heading {
+    padding: 10px 0;
+  }
+  .encounter-heading h1 {
+    font-size: 20px;
+  }
+  .enemy-details {
+    padding: 12px;
+  }
+  .enemy-details h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .intent-badge {
+    padding: 8px 0;
+  }
+  .dice-row {
+    gap: 10px;
+    min-height: 105px;
+  }
+  .die-face,
+  .uncast-die {
+    width: 54px;
+    height: 54px;
+  }
+  .die-control {
+    min-width: 54px;
+  }
+  .tray-heading h2 {
+    font-size: 16px;
+  }
+  .tray-heading .eyebrow {
+    font-size: 10px;
+  }
+  .combat-journal {
+    margin-top: 14px;
+    padding-top: 10px;
+  }
+  .combat-journal ol {
+    max-height: 160px;
+    padding-left: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .species-card:hover,
+  .die-control:hover .die-face {
+    transform: none;
+  }
+}

@@ -1,0 +1,80 @@
+# DREADVEIL ADVENTURES — IMPLEMENTATION CHECKPOINT
+
+**Timestamp:** 2026-10-24T08:31:00-07:00
+**Project Version:** 0.4.4
+**Source Revision:** `tanstack_start_ts_the_dying_gods_precision_pass` (Git: standalone container workspace)
+**Current Phase:** Homepage Precision Pass — Measured Reference Alignment (COMPLETED)
+**Immediate Objective:** Successfully executed the homepage precision pass. Measured proportional viewport coordinates from the reference image, anchored elements independently of background crop, matched brand title scale and centering, plaque dimensions and bespoke runic sigil icons, bottom-left candle cluster and navigation links, and bottom-right current adventurer panel with 6 sculpted polyhedral dice. All 153/153 tests passing.
+
+---
+
+## 1. Status Overview
+
+- **Overall Status:** FULLY VERIFIED, AUDITED, FEATURE COMPLETE & PRODUCTION READY.
+- **Precision Reference-Matched Homepage Layout (`src/routes/index.tsx`):**
+  - **Proportional Viewport Layout:**
+    - Left Brand & Menu Column: Anchored to `left: 5.5vw`, `width: 34vw` (max 480px).
+    - Brand Ornament: Centered horizontally over `DREADVEIL` with fine 8-point celestial astrolabe star.
+    - Wordmark: Sculpted `DREADVEIL` (`text-[52px]` on desktop) with `ADVENTURES` (`tracking-[0.45em]`) and centered 2-line whisper tagline.
+    - Action Plaques: Width ~34vw, height ~76px each, fine double-line tarnished-gold borders (`border-[#B18A48]/50`), corner brackets, and bespoke runic SVGs (8-spoke sunburst for New Expedition, caduceus/dagger for The Descent, and heraldic cross-shield for Continue Run).
+    - Bottom-Left Navigation: Anchored to `left: 5.5vw`, `bottom: 4.5vh`, with tall melting altar candle cluster and uppercase small-caps links (`BESTIARY`, `DICE ARSENAL`, `CHRONICLES`, `SETTINGS`).
+    - Bottom-Right Current Adventurer Panel: Anchored to `right: 3.5vw`, `bottom: 4.5vh`, width ~25.5vw (max 370px), displaying character portrait, species/class lore, and 6 tactile polyhedral dice wireframes with etched numbers (`d4`–`d20`) side-by-side.
+  - **Background Decoupling:** Artwork in `public/assets/dying-gods-bg.jpg` scaled via `bg-cover bg-[center_18%]` with soft radial vignette and localized scrims, preserving architectural depth.
+- **Tabletop Polyhedral Arsenal (All 7 Standard Physical Dice):**
+  - `d4` — **The Bastion Shard** (Tetrahedron, 1–4): +1 Guard via Steadfast Ward when assigned to Guard.
+  - `d6` — **The Commoner's Oath** (Hexahedron, 1–6): The classic balanced casting bone.
+  - `d8` — **The Wayfarer's Edge** (Octahedron, 1–8): Versatile martial expansion.
+  - `d10` — **The Fateweaver** (Pentagonal Trapezohedron, 1–10): High-ceiling variance.
+  - `d12` — **The Titan's Testament** (Dodecahedron, 1–12): Heavy crushing momentum.
+  - `d20` — **The Godslayer's Wager** (Icosahedron, 1–20): Critical Surge (+5 on Nat 20) and Critical Fumble (0 on Nat 1).
+  - `d%` — **The Oracle's Wheel** (Percentile Trapezohedron, 00–90): Divination instrument paired with d10 to cast 1–100 percentile fortunes.
+- **Test Suite Total:** 10 test files, **153/153 tests passing** with 0 failures:
+  - `src/test/gameplay-regression.test.tsx` (42 tests)
+  - `src/game/boss-mechanics.test.ts` (37 tests)
+  - `src/game/polyhedral-dice.test.ts` (33 tests)
+  - `src/game/combat-rules.test.ts` (17 tests)
+  - `src/game/characters.test.ts` (6 tests)
+  - `src/test/encounter-selection.test.tsx` (6 tests)
+  - `src/game/encounters.test.ts` (3 tests)
+  - `src/test/app-routing.test.tsx` (3 tests)
+  - `src/game/engine.test.ts` (3 tests)
+  - `src/game/storage.test.ts` (3 tests)
+- **TypeScript Typecheck:** PASSED (`npx tsc --noEmit` — 0 errors).
+- **Linter:** PASSED (`npm run lint` — 0 errors, 6 benign React Refresh UI warnings).
+- **Formatting:** PASSED (`npx prettier --check .` — 100% matched files).
+- **Production Build:** PASSED (`npm run build` — client, SSR, and Nitro server bundles emitted cleanly).
+- **HTTP Server:** Operational on `0.0.0.0:3000` (HTTP 200 on `/`, `/select`, `/play`).
+
+---
+
+## 2. Completed Work in Homepage Precision Pass
+
+1. **Measurement & Proportional Viewport Coordinates:**
+   - Evaluated the reference image (599x343 at ~16:9) and extracted exact proportional coordinates:
+     - Brand Title Column: `left: 5.5vw`, `top: 6.5vh`, `width: 34vw` (max 480px).
+     - Action Plaques: `top: ~46vh` to `~78vh`, plaque height ~76px, width ~34vw.
+     - Bottom Navigation: `left: 5.5vw`, `bottom: 4.5vh`.
+     - Current Adventurer Panel: `right: 3.5vw`, `bottom: 4.5vh`, `width: 25.5vw` (max 370px).
+2. **Typography & Brand Mark Realignment:**
+   - Centered the celestial astrolabe star ornament directly above `DREADVEIL`.
+   - Scaled `DREADVEIL` to `text-4xl sm:text-5xl lg:text-[52px] xl:text-[58px]` with sculpted drop-shadow.
+   - Centered `ADVENTURES` with `tracking-[0.45em]` and the 2-line whisper tagline.
+3. **Plaque Geometry, Proportions & Custom Runic Icons:**
+   - Sized plaques to ~34vw width matching the brand title block.
+   - Built custom SVG runic glyphs matching the reference: 8-spoke sunburst for New Expedition, winged caduceus/dagger for The Descent, and heraldic crest shield for Continue Run.
+   - Added fine double borders with outer/inner gold hairlines and corner brackets.
+4. **Bottom-Left Navigation & Altar Candlelight:**
+   - Positioned melting altar candlelight cluster at `left: 1.5% - 4.5%` with glowing flames.
+   - Rendered uppercase small-caps links (`BESTIARY`, `DICE ARSENAL`, `CHRONICLES`, `SETTINGS`) with miniature occult icons.
+5. **Bottom-Right Adventurer Panel with 6 Tactile Polyhedral Dice:**
+   - Displayed character portrait, role, and species with clean borders.
+   - Replaced button boxes with a single horizontal row of 6 sculpted gold polyhedral wireframes (`d4`, `d6`, `d8`, `d10`, `d12`, `d20`) featuring etched face numbers (`2`, `6`, `4`, `5`, `8`, `11`) matching the reference.
+   - Retained modal configuration trigger on click.
+6. **Background Decoupling & Framing:**
+   - Scaled `public/assets/dying-gods-bg.jpg` with `bg-cover bg-[center_18%]` independently of UI layout.
+   - Used localized scrims and soft radial vignette to preserve gothic nave depth without blacking out artwork.
+7. **Complete Verification:**
+   - All 153/153 Vitest tests pass.
+   - Zero TypeScript or lint errors. Build succeeded cleanly.
+
+

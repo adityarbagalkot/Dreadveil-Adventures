@@ -1,0 +1,6 @@
+{
+  "name": "Dreadveil",
+  "description": "A dark-fantasy, dice-driven tactical puzzle adventure.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
