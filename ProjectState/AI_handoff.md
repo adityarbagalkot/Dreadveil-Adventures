@@ -1,7 +1,7 @@
 # DREADVEIL ADVENTURES — AI AGENT HANDOFF DIRECTIVE
 
 **Project:** Dreadveil Adventures
-**Current Version:** 0.4.4
+**Current Version:** 0.4.6
 **Target Framework:** React 19 + TanStack Start (SSR) + TanStack Router + Tailwind CSS v4 + TypeScript 5.8
 **Target Environment:** Node.js 22 (linux-x64), npm, AI Studio Web Sandbox (0.0.0.0:3000)
 
@@ -75,21 +75,43 @@ Dreadveil Adventures is an antique, dark-fantasy tactical dice-combat adventure.
 
 ---
 
-## 3.1. What Was Completed in Homepage Precision Pass (Measured Reference Alignment)
+## 3.1. What Was Completed in Homepage Final Polish (v0.4.5)
 
-- **Proportional Viewport Coordinate System (`src/routes/index.tsx`):**
-  - Left brand & menu column anchored to `left: 5.5vw`, `width: 34vw` (max 480px).
-  - Brand ornament centered horizontally over wordmark with custom 8-point celestial astrolabe star SVG.
-  - Sculpted wordmark `DREADVEIL` (`text-[52px]` on desktop) with centered `ADVENTURES` (`tracking-[0.45em]`) and centered 2-line whisper tagline.
-  - Action plaques sized to ~34vw width, ~76px height each, with thin double-line tarnished-gold borders, corner filigree brackets, and bespoke runic SVGs (8-spoke sunburst for New Expedition, caduceus/dagger for The Descent, and heraldic crest shield for Continue Run).
-  - Bottom-left navigation anchored to `left: 5.5vw`, `bottom: 4.5vh`, with tall melting altar candlelight cluster and small-caps links (`BESTIARY`, `DICE ARSENAL`, `CHRONICLES`, `SETTINGS`).
-  - Bottom-right Current Adventurer panel anchored to `right: 3.5vw`, `bottom: 4.5vh`, `width: 25.5vw` (max 370px), displaying character portrait, species/class lore, and a single row of 6 sculpted tactile polyhedral dice wireframes with etched face numbers (`d4`–`d20`) matching the reference.
+- **Title Block & Astrolabe Refinement (`src/routes/index.tsx`):**
+  - Reduced wordmark to `text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px]` with naturally scaled proportions.
+  - Sized celestial astrolabe star to 28×28px with extended horizontal/vertical rays (`strokeWidth="1.2"`), aligning naturally right above `DREADVEIL`.
+  - Tightened vertical margins for `ADVENTURES` kicker and 2-line whisper tagline.
+- **Menu Plaque Height & Gap Reductions:**
+  - Reduced plaque internal vertical padding to `py-2.5 sm:py-3` (approx ~64px total height), while preserving exact width (~34vw, max 480px).
+  - Reduced vertical gaps between plaques to `gap-2.5 sm:gap-3` and container top-margin to `mt-5 sm:mt-5.5 lg:mt-6`.
+  - Preserved all typography, gold hairline double-borders, corner filigree notches, and bespoke runic icons (sunburst, caduceus, crest).
+- **Current Adventurer Panel Compactness & Tactile Dice Prominence:**
+  - Compacted panel vertically (`p-2.5 sm:p-3`, header `mb-2`, portrait `size-11 sm:size-12`, top margin `mt-2 pt-2`).
+  - Sized polyhedral dice up to 35×35px with radiant gold facet gradient (`#FFF7D9` to `#543711`), dark etched facet lines (`#2A1605`), bold numbers (`fontSize="14" font-black`), and drop-shadows.
+  - Kept panel width strictly at `25.5vw` (max 370px).
 - **Independent Background Framing:**
-  - Artwork in `public/assets/dying-gods-bg.jpg` scaled via `bg-cover bg-[center_18%]` independently of UI layout.
-  - Used localized scrims and soft radial vignette to preserve gothic nave depth without blacking out artwork.
+  - Preserved full-screen background positioning (`bg-cover bg-[center_18%]`), dark-fantasy palette, navigation, character data, dice data, and saved state.
 - **Safety & Functionality Preservation:**
   - Preserved 100% of existing routing, quick-start, persistence, all 10 hybrid species abilities, and all 3 boss encounters.
   - 153/153 Vitest tests passing; 0 ESLint errors; 0 TypeScript errors; clean production build.
+
+---
+
+## 3.2. What Was Completed in Visual Update 2: The Dying Gods Combat Arena (v0.4.6)
+
+- **Combat Arena Precision Match (`src/routes/play.tsx`):**
+  - Modeled after visual source of truth (`image_bc51219c.png`).
+  - **Upper-Left:** Dominant framed artwork of the Lantern-Jawed Mire Hound (`src/assets/mire-hound.jpg`), top title & vitality track (`Enemy vitality`), and bottom-left antique bronze medallion badge (`8`).
+  - **Upper-Right:** Parchment `#D6C7A5` information panel with dark charcoal ink typography, classification (`PREDATOR OF THE BLACKWATER`), atmospheric lore, `ENEMY INTENT` heading, icon, numerical value, and narrative intent description verbatim from reference.
+  - **Lower-Left:** Player character panel with master roster crop, character role, species, vitality track (`Your vitality`), and 3 circular metallic status sigils (emerald ward, crimson strike, sapphire arcana).
+  - **Lower-Middle:** Six-die polyhedral tray (`d4`, `d6`, `d8`, `d10`, `d12`, `d20`), with interactive 3-die active loadout buttons matching `/Die \d/i` and toggling `aria-pressed`, and three wide action plaques:
+    1. `STRIKE` (blood-wine/muted crimson: `bg-[#762F32]`, triggering End Turn/Strike).
+    2. `GUARD` (dark slate iron: `bg-[#18202A]`, instant defensive stance setter).
+    3. `REROLL (N)` (muted forest green: `bg-[#3D4D38]`, decrements rerolls and disables when exhausted).
+  - **Lower-Right:** Signature Ability card with ornate filigree frame, arcane sigil icon, ability name, text, and interactive Invoke button.
+  - **Combat Chronicle:** Compact antique battle log strip preserving all test query contracts (`screen.getByText(/You strike for/i)`).
+  - **Engine Isolation Honesty:** Maintained the pure 3-die loadout combat engine (`engine.ts`), isolating the visual 6-dice row without breaking tests or engine contracts.
+  - **Verification:** All 153/153 tests passing, 0 TypeScript errors, 0 ESLint errors, clean build.
 
 ---
 

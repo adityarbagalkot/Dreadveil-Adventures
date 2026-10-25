@@ -45,7 +45,7 @@ export const ENCOUNTERS: Record<EncounterId, Encounter> = {
     title: "Creature of the mire",
     subtitle: "Predator of the Blackwater",
     location: "The blackwater crossing",
-    lore: "A gaunt, moss-covered quadruped that lurks in the peat bogs beyond the Veil. Its lantern jaw glows with corpse-candle flame, luring the unwary into deep water.",
+    lore: "It hunts by scent, drawn to the living like a prayer to a forgotten god. The light within its jaws is not a lantern, but something that should never have been born.",
     difficulty: "Apprentice",
     difficultyRating: 1,
     maxHp: 46,
@@ -55,7 +55,8 @@ export const ENCOUNTERS: Record<EncounterId, Encounter> = {
         amount: 7,
         label: "Gnashing Bite",
         modifier: "standard",
-        description: "A vicious snap of needle teeth aimed at your throat.",
+        description:
+          "The hound lowers its antlered skull. A sickly glow spills between its jaws as it surges through the blackwater, teeth closing on the space where your throat was a heartbeat ago.",
       },
       {
         kind: "guard",

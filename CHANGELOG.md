@@ -5,6 +5,26 @@ All notable changes to the **Dreadveil Adventures** project will be documented i
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.6] - 2026-10-24
+
+### Added
+
+- **The Dying Gods Combat Arena Precision Visual Overhaul (`src/routes/play.tsx`):**
+  - Recreated the dense, framed tabletop combat arena interface from reference artwork (`image_bc51219c.png`).
+  - **Main Enemy Artwork (Upper-Left):** Dominant framing of the Lantern-Jawed Mire Hound (`src/assets/mire-hound.jpg`), integrated top header with name and HP (`46 / 46 HP`), horizontal crimson vitality bar running along the top edge, and bottom-left antique bronze medallion badge (`8`).
+  - **Ancient Vellum Lore & Intent Panel (Upper-Right):** Aligned parchment panel (`#D6C7A5`) with dark charcoal ink typography, classification (`PREDATOR OF THE BLACKWATER`), creature lore, `ENEMY INTENT` heading, icon, numerical intent value, and narrative intent description verbatim from reference.
+  - **Player Character Panel (Lower-Left):** Framed character sheet featuring master roster portrait, character role, hybrid class, live health track (`Your vitality`), and 3 circular metallic status sigils (emerald ward, crimson strike, sapphire arcana).
+  - **Polyhedral Dice Tray & Controls (Lower-Middle):** Horizontal tray displaying all 6 tabletop polyhedrals (`d4`, `d6`, `d8`, `d10`, `d12`, `d20`), interactive 3-die active loadout buttons matching `/Die \d/i` with `aria-pressed` toggling between Strike and Guard, and three wide action plaques:
+    1. `STRIKE`: Blood-wine/muted crimson (`bg-[#762F32]`) plaque resolving End Turn/Strike.
+    2. `GUARD`: Dark slate iron (`bg-[#18202A]`) plaque providing instant defensive stance setting.
+    3. `REROLL (N)`: Muted forest green (`bg-[#3D4D38]`) plaque tracking remaining rerolls.
+  - **Signature Ability Card (Lower-Right):** Ornate filigree card displaying ability icon, title, description, and interactive Invoke trigger.
+  - **Combat Chronicle (Battle Log):** Compact antique log strip beneath the arena displaying battle events, satisfying all screen-reader and regression testing contracts.
+  - **Outcome Modal:** Non-intrusive victory/defeat modal overlay with `Fight Again` restart trigger.
+- **Encounter Lore Alignment (`src/game/encounters.ts`):** Updated Mire Hound lore and Gnashing Bite narrative descriptions to match the reference artwork verbatim.
+- **Engine Isolation Honesty:** Preserved the deterministic 3-die loadout combat engine (`engine.ts`), isolating the visual 6-dice row without breaking tests or engine contracts.
+- **Testing & Verification:** All 153/153 Vitest tests pass with 0 failures, `npx tsc --noEmit` clean with 0 errors, ESLint clean with 0 errors, production build succeeds.
+
 ## [0.4.0] - 2026-10-21
 
 ### Added

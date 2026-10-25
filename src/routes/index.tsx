@@ -106,11 +106,11 @@ function TitleScreen() {
         <div className="flex flex-col lg:absolute lg:left-[5.5vw] lg:top-[6.5vh] lg:w-[34vw] lg:max-w-[480px] lg:min-w-[340px]">
           {/* Upper-Left Brand Block: Celestial Ornament, DREADVEIL, ADVENTURES, Whisper Tagline */}
           <header className="flex flex-col items-center text-center">
-            {/* Occult Celestial Astrolabe / Star Ornament: Centered horizontally over DREADVEIL */}
-            <div className="flex items-center justify-center text-[#B18A48] drop-shadow-[0_0_10px_rgba(177,138,72,0.45)] mb-1">
+            {/* Occult Celestial Astrolabe / Star Ornament: Natural alignment with DREADVEIL */}
+            <div className="flex items-center justify-center text-[#B18A48] drop-shadow-[0_0_8px_rgba(177,138,72,0.45)] mb-0.5">
               <svg
-                width="34"
-                height="34"
+                width="28"
+                height="28"
                 viewBox="0 0 100 100"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,22 +129,22 @@ function TitleScreen() {
                 <circle cx="50" cy="50" r="32" stroke="#B18A48" strokeWidth="1" />
                 {/* Horizontal radiating rays */}
                 <line
-                  x1="2"
+                  x1="4"
                   y1="50"
-                  x2="98"
+                  x2="96"
                   y2="50"
                   stroke="#B18A48"
-                  strokeWidth="1"
-                  opacity="0.6"
+                  strokeWidth="1.2"
+                  opacity="0.75"
                 />
                 <line
                   x1="50"
-                  y1="2"
+                  y1="4"
                   x2="50"
-                  y2="98"
+                  y2="96"
                   stroke="#B18A48"
-                  strokeWidth="1"
-                  opacity="0.6"
+                  strokeWidth="1.2"
+                  opacity="0.75"
                 />
                 {/* Primary 8-pointed star */}
                 <path
@@ -170,18 +170,18 @@ function TitleScreen() {
               </svg>
             </div>
 
-            {/* Wordmark: Grand, sculpted antique serif matching reference proportions */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[52px] xl:text-[58px] tracking-[0.14em] text-[#D6C7A5] font-normal leading-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+            {/* Wordmark: Sculpted antique serif scaled with natural proportions */}
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px] tracking-[0.13em] text-[#D6C7A5] font-normal leading-none drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
               DREADVEIL
             </h1>
 
-            {/* Sub-Kicker: ADVENTURES widely tracked across title width */}
-            <p className="font-display text-xs sm:text-sm tracking-[0.45em] text-[#B18A48] mt-1.5 uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-semibold">
+            {/* Sub-Kicker: ADVENTURES spaced cleanly across title width */}
+            <p className="font-display text-[11px] sm:text-xs tracking-[0.42em] text-[#B18A48] mt-1 uppercase drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] font-semibold">
               ADVENTURES
             </p>
 
             {/* Tagline: Centered 2-line whisper */}
-            <p className="mt-2.5 text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#D6C7A5]/85 font-serif leading-relaxed drop-shadow max-w-xs">
+            <p className="mt-2 text-[9.5px] sm:text-[10.5px] tracking-[0.18em] uppercase text-[#D6C7A5]/85 font-serif leading-relaxed drop-shadow max-w-xs">
               When the gods fell silent,
               <br />
               the dice began to whisper.
@@ -197,13 +197,13 @@ function TitleScreen() {
           ========================================================================== */}
           <nav
             aria-label="Main menu"
-            className="flex flex-col gap-3 sm:gap-3.5 w-full mt-6 sm:mt-7 lg:mt-8"
+            className="flex flex-col gap-2.5 sm:gap-3 w-full mt-5 sm:mt-5.5 lg:mt-6"
           >
             {/* 1. NEW EXPEDITION */}
             <Link
               to="/select"
               aria-label="New Game — Begin a journey into the unknown"
-              className="group relative flex w-full items-center gap-4 rounded border border-[#B18A48]/50 bg-[#11100F]/90 px-4 py-3 sm:px-5 sm:py-3.5 text-left shadow-[0_4px_20px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-200 hover:border-[#B18A48] hover:bg-[#161412] hover:shadow-[0_0_20px_rgba(177,138,72,0.3)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#B18A48]"
+              className="group relative flex w-full items-center gap-3.5 sm:gap-4 rounded border border-[#B18A48]/50 bg-[#11100F]/90 px-4 py-2.5 sm:px-4.5 sm:py-3 text-left shadow-[0_4px_18px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-200 hover:border-[#B18A48] hover:bg-[#161412] hover:shadow-[0_0_18px_rgba(177,138,72,0.3)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#B18A48]"
             >
               {/* Antique Corner Filigree Brackets */}
               <div className="absolute top-1 left-1 size-1.5 border-t border-l border-[#B18A48]" />
@@ -212,10 +212,10 @@ function TitleScreen() {
               <div className="absolute bottom-1 right-1 size-1.5 border-b border-r border-[#B18A48]" />
 
               {/* Runic Sigil Icon: 8-spoke radiating chaos/sun starburst */}
-              <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded border border-[#B18A48]/35 bg-black/60 text-[#B18A48] group-hover:text-candle group-hover:border-[#B18A48] transition-colors shadow-inner">
+              <div className="flex size-8.5 sm:size-9.5 shrink-0 items-center justify-center rounded border border-[#B18A48]/35 bg-black/60 text-[#B18A48] group-hover:text-candle group-hover:border-[#B18A48] transition-colors shadow-inner">
                 <svg
-                  width="22"
-                  height="22"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -241,7 +241,7 @@ function TitleScreen() {
                 <span className="font-display text-sm sm:text-[15px] tracking-[0.16em] text-[#D6C7A5] group-hover:text-candle transition-colors uppercase font-semibold">
                   NEW EXPEDITION
                 </span>
-                <span className="text-[11px] sm:text-xs text-[#A8A7A0] font-serif tracking-normal leading-tight mt-0.5">
+                <span className="text-[10.5px] sm:text-xs text-[#A8A7A0] font-serif tracking-normal leading-tight mt-0.5">
                   Begin a journey into the unknown.
                 </span>
               </div>
@@ -252,7 +252,7 @@ function TitleScreen() {
               type="button"
               onClick={() => setActiveModal("descent")}
               aria-label="The Descent — See how long you endure"
-              className="group relative flex w-full items-center gap-4 rounded border border-[#B18A48]/40 bg-[#11100F]/90 px-4 py-3 sm:px-5 sm:py-3.5 text-left shadow-[0_4px_20px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-200 hover:border-[#B18A48] hover:bg-[#161412] hover:shadow-[0_0_18px_rgba(177,138,72,0.25)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#B18A48] cursor-pointer"
+              className="group relative flex w-full items-center gap-3.5 sm:gap-4 rounded border border-[#B18A48]/40 bg-[#11100F]/90 px-4 py-2.5 sm:px-4.5 sm:py-3 text-left shadow-[0_4px_18px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-200 hover:border-[#B18A48] hover:bg-[#161412] hover:shadow-[0_0_18px_rgba(177,138,72,0.25)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#B18A48] cursor-pointer"
             >
               <div className="absolute top-1 left-1 size-1.5 border-t border-l border-[#B18A48]" />
               <div className="absolute top-1 right-1 size-1.5 border-t border-r border-[#B18A48]" />
@@ -260,10 +260,10 @@ function TitleScreen() {
               <div className="absolute bottom-1 right-1 size-1.5 border-b border-r border-[#B18A48]" />
 
               {/* Occult Caduceus / Winged Dagger Icon */}
-              <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded border border-[#B18A48]/35 bg-black/60 text-[#B18A48] group-hover:text-candle group-hover:border-[#B18A48] transition-colors shadow-inner">
+              <div className="flex size-8.5 sm:size-9.5 shrink-0 items-center justify-center rounded border border-[#B18A48]/35 bg-black/60 text-[#B18A48] group-hover:text-candle group-hover:border-[#B18A48] transition-colors shadow-inner">
                 <svg
-                  width="22"
-                  height="22"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -284,7 +284,7 @@ function TitleScreen() {
                 <span className="font-display text-sm sm:text-[15px] tracking-[0.16em] text-[#D6C7A5] group-hover:text-candle transition-colors uppercase font-semibold">
                   THE DESCENT
                 </span>
-                <span className="text-[11px] sm:text-xs text-[#A8A7A0] font-serif tracking-normal leading-tight mt-0.5">
+                <span className="text-[10.5px] sm:text-xs text-[#A8A7A0] font-serif tracking-normal leading-tight mt-0.5">
                   See how long you endure.
                 </span>
               </div>
@@ -295,7 +295,7 @@ function TitleScreen() {
               <Link
                 to="/play"
                 aria-label={`Quick start as ${character.name}`}
-                className="group relative flex w-full items-center gap-4 rounded border border-[#B18A48]/50 bg-[#11100F]/90 px-4 py-3 sm:px-5 sm:py-3.5 text-left shadow-[0_4px_20px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-200 hover:border-[#B18A48] hover:bg-[#161412] hover:shadow-[0_0_20px_rgba(177,138,72,0.3)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#B18A48]"
+                className="group relative flex w-full items-center gap-3.5 sm:gap-4 rounded border border-[#B18A48]/50 bg-[#11100F]/90 px-4 py-2.5 sm:px-4.5 sm:py-3 text-left shadow-[0_4px_18px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-200 hover:border-[#B18A48] hover:bg-[#161412] hover:shadow-[0_0_18px_rgba(177,138,72,0.3)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#B18A48]"
               >
                 <div className="absolute top-1 left-1 size-1.5 border-t border-l border-[#B18A48]" />
                 <div className="absolute top-1 right-1 size-1.5 border-t border-r border-[#B18A48]" />
@@ -303,10 +303,10 @@ function TitleScreen() {
                 <div className="absolute bottom-1 right-1 size-1.5 border-b border-r border-[#B18A48]" />
 
                 {/* Heraldic Shield Crest Icon */}
-                <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded border border-[#B18A48]/35 bg-black/60 text-[#B18A48] group-hover:text-candle group-hover:border-[#B18A48] transition-colors shadow-inner">
+                <div className="flex size-8.5 sm:size-9.5 shrink-0 items-center justify-center rounded border border-[#B18A48]/35 bg-black/60 text-[#B18A48] group-hover:text-candle group-hover:border-[#B18A48] transition-colors shadow-inner">
                   <svg
-                    width="22"
-                    height="22"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -325,7 +325,7 @@ function TitleScreen() {
                   <span className="font-display text-sm sm:text-[15px] tracking-[0.16em] text-[#D6C7A5] group-hover:text-candle transition-colors uppercase font-semibold">
                     CONTINUE RUN
                   </span>
-                  <span className="text-[11px] sm:text-xs text-candle/90 font-serif tracking-normal truncate leading-tight mt-0.5">
+                  <span className="text-[10.5px] sm:text-xs text-candle/90 font-serif tracking-normal truncate leading-tight mt-0.5">
                     Quick start as {character.name} · {encounter?.name ?? "The Crossing"}
                   </span>
                 </div>
@@ -334,17 +334,17 @@ function TitleScreen() {
               <Link
                 to="/select"
                 aria-label="Continue Run — No active run"
-                className="group relative flex w-full items-center gap-4 rounded border border-[#B18A48]/30 bg-[#11100F]/75 px-4 py-3 sm:px-5 sm:py-3.5 text-left shadow-[0_3px_14px_rgba(0,0,0,0.4)] backdrop-blur-md opacity-80 hover:opacity-100 transition-all duration-200 hover:border-[#B18A48]/60 focus-visible:outline-none"
+                className="group relative flex w-full items-center gap-3.5 sm:gap-4 rounded border border-[#B18A48]/30 bg-[#11100F]/75 px-4 py-2.5 sm:px-4.5 sm:py-3 text-left shadow-[0_3px_14px_rgba(0,0,0,0.4)] backdrop-blur-md opacity-80 hover:opacity-100 transition-all duration-200 hover:border-[#B18A48]/60 focus-visible:outline-none"
               >
                 <div className="absolute top-1 left-1 size-1.5 border-t border-l border-[#B18A48]/40" />
                 <div className="absolute top-1 right-1 size-1.5 border-t border-r border-[#B18A48]/40" />
                 <div className="absolute bottom-1 left-1 size-1.5 border-b border-l border-[#B18A48]/40" />
                 <div className="absolute bottom-1 right-1 size-1.5 border-b border-r border-[#B18A48]/40" />
 
-                <div className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded border border-[#B18A48]/25 bg-black/50 text-[#A8A7A0]">
+                <div className="flex size-8.5 sm:size-9.5 shrink-0 items-center justify-center rounded border border-[#B18A48]/25 bg-black/50 text-[#A8A7A0]">
                   <svg
-                    width="22"
-                    height="22"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -362,7 +362,7 @@ function TitleScreen() {
                   <span className="font-display text-sm sm:text-[15px] tracking-[0.16em] text-[#A8A7A0] uppercase font-semibold">
                     CONTINUE RUN
                   </span>
-                  <span className="text-[11px] sm:text-xs text-[#A8A7A0]/75 font-serif leading-tight mt-0.5">
+                  <span className="text-[10.5px] sm:text-xs text-[#A8A7A0]/75 font-serif leading-tight mt-0.5">
                     No active run · Select an adventurer
                   </span>
                 </div>
@@ -523,7 +523,7 @@ function TitleScreen() {
         ========================================================================== */}
         <aside
           aria-label="Current Adventurer Preview"
-          className="relative w-full sm:w-[350px] lg:w-[25.5vw] lg:max-w-[370px] lg:min-w-[320px] shrink-0 rounded border border-[#B18A48]/50 bg-[#11100F]/90 p-3 sm:p-3.5 shadow-[0_6px_24px_rgba(0,0,0,0.85)] backdrop-blur-md mt-6 lg:mt-0 lg:absolute lg:right-[3.5vw] lg:bottom-[4.5vh]"
+          className="relative w-full sm:w-[350px] lg:w-[25.5vw] lg:max-w-[370px] lg:min-w-[320px] shrink-0 rounded border border-[#B18A48]/50 bg-[#11100F]/90 p-2.5 sm:p-3 shadow-[0_6px_22px_rgba(0,0,0,0.85)] backdrop-blur-md mt-6 lg:mt-0 lg:absolute lg:right-[3.5vw] lg:bottom-[4.5vh]"
         >
           {/* Antique corner filigree brackets */}
           <div className="absolute top-1 left-1 size-1.5 border-t border-l border-[#B18A48]" />
@@ -532,7 +532,7 @@ function TitleScreen() {
           <div className="absolute bottom-1 right-1 size-1.5 border-b border-r border-[#B18A48]" />
 
           {/* Panel Header */}
-          <div className="border-b border-[#B18A48]/25 pb-1 mb-2.5">
+          <div className="border-b border-[#B18A48]/25 pb-1 mb-2">
             <span className="text-[10px] font-serif uppercase tracking-[0.25em] text-[#D6C7A5]/80 font-bold">
               CURRENT ADVENTURER
             </span>
@@ -542,10 +542,10 @@ function TitleScreen() {
           <Link
             to="/select"
             title="Change Adventurer"
-            className="group flex items-center gap-3 transition-opacity hover:opacity-90 cursor-pointer"
+            className="group flex items-center gap-2.5 sm:gap-3 transition-opacity hover:opacity-90 cursor-pointer"
           >
             {/* Character Portrait */}
-            <div className="relative size-12 sm:size-13 shrink-0 overflow-hidden rounded border border-[#B18A48]/60 bg-black/70 shadow-inner group-hover:border-[#B18A48] transition-colors">
+            <div className="relative size-11 sm:size-12 shrink-0 overflow-hidden rounded border border-[#B18A48]/60 bg-black/70 shadow-inner group-hover:border-[#B18A48] transition-colors">
               {character ? (
                 <div
                   className="size-full"
@@ -559,8 +559,8 @@ function TitleScreen() {
               ) : (
                 <div className="flex size-full items-center justify-center text-[#B18A48]/60">
                   <svg
-                    width="24"
-                    height="24"
+                    width="22"
+                    height="22"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -575,10 +575,10 @@ function TitleScreen() {
 
             {/* Character Lore Details */}
             <div className="flex flex-col min-w-0 flex-1">
-              <span className="font-display text-sm tracking-wider uppercase text-[#D6C7A5] truncate font-semibold group-hover:text-candle transition-colors">
+              <span className="font-display text-xs sm:text-sm tracking-wider uppercase text-[#D6C7A5] truncate font-semibold group-hover:text-candle transition-colors">
                 {character?.name ?? "Locke Blackwood"}
               </span>
-              <span className="text-[11px] text-[#A8A7A0] font-serif truncate mt-0.5 leading-tight">
+              <span className="text-[10px] sm:text-[10.5px] text-[#A8A7A0] font-serif truncate mt-0.5 leading-tight">
                 {character
                   ? `${character.role} · ${character.hybrid}`
                   : "Dragonborn · Bard 1 / Wizard 3"}
@@ -587,12 +587,12 @@ function TitleScreen() {
           </Link>
 
           {/* Tabletop Polyhedral Dice Tray: Single row of 6 tactile polyhedral dice matching reference */}
-          <div className="mt-3 pt-2.5 border-t border-[#B18A48]/25">
+          <div className="mt-2 pt-2 border-t border-[#B18A48]/25">
             <button
               type="button"
               onClick={() => setIsDiceModalOpen(true)}
               title="Click to configure combat dice loadout"
-              className="grid grid-cols-6 gap-1.5 w-full cursor-pointer group focus-visible:outline-none"
+              className="grid grid-cols-6 gap-1 sm:gap-1.5 w-full cursor-pointer group focus-visible:outline-none"
             >
               {COMBAT_DIE_TYPES.map((die) => {
                 const isEquipped = loadout.includes(die);
@@ -605,16 +605,16 @@ function TitleScreen() {
                     className={cn(
                       "relative flex flex-col items-center justify-center p-0.5 rounded transition-transform duration-200 group-hover:scale-105",
                       isEquipped
-                        ? "drop-shadow-[0_0_8px_rgba(229,202,146,0.5)]"
-                        : "opacity-60 hover:opacity-100",
+                        ? "drop-shadow-[0_0_9px_rgba(245,220,163,0.6)]"
+                        : "opacity-75 hover:opacity-100",
                     )}
                   >
                     {/* Tactile Sculpted Polyhedral Die SVG Wireframe with Etched Facets & Face Number */}
                     <svg
-                      width="32"
-                      height="32"
+                      width="35"
+                      height="35"
                       viewBox="0 0 60 60"
-                      className="transition-all duration-200"
+                      className="transition-all duration-200 drop-shadow-[0_2px_5px_rgba(0,0,0,0.85)]"
                     >
                       <defs>
                         <linearGradient
@@ -625,15 +625,11 @@ function TitleScreen() {
                           y2="60"
                           gradientUnits="userSpaceOnUse"
                         >
-                          <stop stopColor="#F7ECC8" />
-                          <stop offset="0.3" stopColor="#E5CA92" />
-                          <stop offset="0.7" stopColor="#B18A48" />
-                          <stop offset="1" stopColor="#5E431E" />
+                          <stop stopColor="#FFF7D9" />
+                          <stop offset="0.25" stopColor="#F5DCA3" />
+                          <stop offset="0.65" stopColor="#C89D4B" />
+                          <stop offset="1" stopColor="#543711" />
                         </linearGradient>
-                        <radialGradient id={`die-inner-${die}`} cx="50%" cy="50%" r="50%">
-                          <stop stopColor="#FFEFC2" stopOpacity="0.4" />
-                          <stop offset="1" stopColor="#3A2510" stopOpacity="0.8" />
-                        </radialGradient>
                       </defs>
 
                       {/* d4: Tetrahedron with top vertex, 3 facets, number "2" */}
@@ -642,25 +638,25 @@ function TitleScreen() {
                           <polygon
                             points="30,6 54,48 6,48"
                             fill={`url(#die-gold-${die})`}
-                            stroke="#3A2510"
+                            stroke="#2A1605"
                             strokeWidth="2"
                           />
-                          <line x1="30" y1="6" x2="30" y2="40" stroke="#3A2510" strokeWidth="1.5" />
-                          <line x1="6" y1="48" x2="30" y2="40" stroke="#3A2510" strokeWidth="1.5" />
+                          <line x1="30" y1="6" x2="30" y2="40" stroke="#2A1605" strokeWidth="1.6" />
+                          <line x1="6" y1="48" x2="30" y2="40" stroke="#2A1605" strokeWidth="1.6" />
                           <line
                             x1="54"
                             y1="48"
                             x2="30"
                             y2="40"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
                           <text
                             x="30"
-                            y="32"
-                            fill="#2A1808"
-                            fontSize="13"
-                            fontWeight="bold"
+                            y="33"
+                            fill="#1A0D03"
+                            fontSize="14"
+                            fontWeight="900"
                             fontFamily="serif"
                             textAnchor="middle"
                           >
@@ -675,30 +671,30 @@ function TitleScreen() {
                           {/* Top face */}
                           <polygon
                             points="30,8 50,19 30,30 10,19"
-                            fill="#F7ECC8"
-                            stroke="#3A2510"
+                            fill="#FFF7D9"
+                            stroke="#2A1605"
                             strokeWidth="1.8"
                           />
                           {/* Left face */}
                           <polygon
                             points="10,19 30,30 30,52 10,41"
-                            fill="#B18A48"
-                            stroke="#3A2510"
+                            fill="#C89D4B"
+                            stroke="#2A1605"
                             strokeWidth="1.8"
                           />
                           {/* Right face */}
                           <polygon
                             points="30,30 50,19 50,41 30,52"
-                            fill="#7A5622"
-                            stroke="#3A2510"
+                            fill="#8A6324"
+                            stroke="#2A1605"
                             strokeWidth="1.8"
                           />
                           <text
                             x="30"
                             y="44"
-                            fill="#2A1808"
-                            fontSize="14"
-                            fontWeight="bold"
+                            fill="#1A0D03"
+                            fontSize="15"
+                            fontWeight="900"
                             fontFamily="serif"
                             textAnchor="middle"
                           >
@@ -713,17 +709,17 @@ function TitleScreen() {
                           <polygon
                             points="30,6 52,30 30,54 8,30"
                             fill={`url(#die-gold-${die})`}
-                            stroke="#3A2510"
+                            stroke="#2A1605"
                             strokeWidth="2"
                           />
-                          <line x1="8" y1="30" x2="52" y2="30" stroke="#3A2510" strokeWidth="1.5" />
-                          <line x1="30" y1="6" x2="30" y2="54" stroke="#3A2510" strokeWidth="1.5" />
+                          <line x1="8" y1="30" x2="52" y2="30" stroke="#2A1605" strokeWidth="1.6" />
+                          <line x1="30" y1="6" x2="30" y2="54" stroke="#2A1605" strokeWidth="1.6" />
                           <text
                             x="30"
-                            y="25"
-                            fill="#2A1808"
-                            fontSize="13"
-                            fontWeight="bold"
+                            y="26"
+                            fill="#1A0D03"
+                            fontSize="14"
+                            fontWeight="900"
                             fontFamily="serif"
                             textAnchor="middle"
                           >
@@ -738,41 +734,41 @@ function TitleScreen() {
                           <polygon
                             points="30,6 52,22 44,52 16,52 8,22"
                             fill={`url(#die-gold-${die})`}
-                            stroke="#3A2510"
+                            stroke="#2A1605"
                             strokeWidth="2"
                           />
-                          <line x1="30" y1="6" x2="30" y2="35" stroke="#3A2510" strokeWidth="1.5" />
-                          <line x1="8" y1="22" x2="30" y2="35" stroke="#3A2510" strokeWidth="1.5" />
+                          <line x1="30" y1="6" x2="30" y2="35" stroke="#2A1605" strokeWidth="1.6" />
+                          <line x1="8" y1="22" x2="30" y2="35" stroke="#2A1605" strokeWidth="1.6" />
                           <line
                             x1="52"
                             y1="22"
                             x2="30"
                             y2="35"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
                           <line
                             x1="16"
                             y1="52"
                             x2="30"
                             y2="35"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
                           <line
                             x1="44"
                             y1="52"
                             x2="30"
                             y2="35"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
                           <text
                             x="30"
-                            y="27"
-                            fill="#2A1808"
-                            fontSize="13"
-                            fontWeight="bold"
+                            y="28"
+                            fill="#1A0D03"
+                            fontSize="14"
+                            fontWeight="900"
                             fontFamily="serif"
                             textAnchor="middle"
                           >
@@ -787,48 +783,48 @@ function TitleScreen() {
                           <polygon
                             points="30,6 51,18 46,46 14,46 9,18"
                             fill={`url(#die-gold-${die})`}
-                            stroke="#3A2510"
+                            stroke="#2A1605"
                             strokeWidth="2"
                           />
                           {/* Inner pentagon facet */}
                           <polygon
                             points="30,17 42,26 38,40 22,40 18,26"
-                            fill="#F7ECC8"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            fill="#FFF7D9"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
-                          <line x1="30" y1="6" x2="30" y2="17" stroke="#3A2510" strokeWidth="1.5" />
+                          <line x1="30" y1="6" x2="30" y2="17" stroke="#2A1605" strokeWidth="1.6" />
                           <line
                             x1="51"
                             y1="18"
                             x2="42"
                             y2="26"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
                           <line
                             x1="46"
                             y1="46"
                             x2="38"
                             y2="40"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
                           <line
                             x1="14"
                             y1="46"
                             x2="22"
                             y2="40"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
-                          <line x1="9" y1="18" x2="18" y2="26" stroke="#3A2510" strokeWidth="1.5" />
+                          <line x1="9" y1="18" x2="18" y2="26" stroke="#2A1605" strokeWidth="1.6" />
                           <text
                             x="30"
                             y="33"
-                            fill="#2A1808"
-                            fontSize="13"
-                            fontWeight="bold"
+                            fill="#1A0D03"
+                            fontSize="14"
+                            fontWeight="900"
                             fontFamily="serif"
                             textAnchor="middle"
                           >
@@ -843,57 +839,57 @@ function TitleScreen() {
                           <polygon
                             points="30,6 52,19 52,43 30,54 8,43 8,19"
                             fill={`url(#die-gold-${die})`}
-                            stroke="#3A2510"
+                            stroke="#2A1605"
                             strokeWidth="2"
                           />
                           {/* Central equilateral triangle face */}
                           <polygon
                             points="30,17 46,42 14,42"
-                            fill="#F7ECC8"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            fill="#FFF7D9"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
-                          <line x1="30" y1="6" x2="30" y2="17" stroke="#3A2510" strokeWidth="1.5" />
+                          <line x1="30" y1="6" x2="30" y2="17" stroke="#2A1605" strokeWidth="1.6" />
                           <line
                             x1="52"
                             y1="19"
                             x2="30"
                             y2="17"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
-                          <line x1="8" y1="19" x2="30" y2="17" stroke="#3A2510" strokeWidth="1.5" />
+                          <line x1="8" y1="19" x2="30" y2="17" stroke="#2A1605" strokeWidth="1.6" />
                           <line
                             x1="52"
                             y1="43"
                             x2="46"
                             y2="42"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
-                          <line x1="8" y1="43" x2="14" y2="42" stroke="#3A2510" strokeWidth="1.5" />
+                          <line x1="8" y1="43" x2="14" y2="42" stroke="#2A1605" strokeWidth="1.6" />
                           <line
                             x1="30"
                             y1="54"
                             x2="46"
                             y2="42"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
                           <line
                             x1="30"
                             y1="54"
                             x2="14"
                             y2="42"
-                            stroke="#3A2510"
-                            strokeWidth="1.5"
+                            stroke="#2A1605"
+                            strokeWidth="1.6"
                           />
                           <text
                             x="30"
                             y="34"
-                            fill="#2A1808"
-                            fontSize="12"
-                            fontWeight="bold"
+                            fill="#1A0D03"
+                            fontSize="13"
+                            fontWeight="900"
                             fontFamily="serif"
                             textAnchor="middle"
                           >
@@ -904,7 +900,7 @@ function TitleScreen() {
                     </svg>
 
                     {/* Miniature die label under icon */}
-                    <span className="text-[9px] font-serif font-bold text-[#D6C7A5]/80 mt-0.5 leading-none">
+                    <span className="text-[9.5px] font-serif font-bold text-[#E5CA92] mt-0.5 leading-none">
                       {die}
                     </span>
                   </div>

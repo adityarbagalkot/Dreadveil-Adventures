@@ -9,11 +9,17 @@
   - Full-screen antique illustrated dark-fantasy title screen: colossal ruined cathedral (`public/assets/dying-gods-bg.jpg` at `bg-[center_18%]`), dying god silhouette with eclipse corona, luminous cathedral depth with soft radial vignette and localized scrims.
   - Proportional Viewport Coordinate System:
     - Left brand & menu column: `left: 5.5vw`, `width: 34vw` (max 480px).
-    - Celestial Astrolabe Star: Centered horizontally above wordmark with 8-pointed gold compass star.
-    - Title: Sculpted `DREADVEIL` (`text-[52px]` on desktop) with `ADVENTURES` (`tracking-[0.45em]`) and centered 2-line whisper tagline.
-    - Three main menu plaques (`top: ~46vh` to `~78vh`, width ~34vw, height ~76px): New Expedition (8-spoke sunburst), The Descent (winged caduceus/dagger), Continue Run (heraldic crest shield).
+    - Celestial Astrolabe Star: Naturally aligned horizontally above wordmark with 28px 8-pointed gold compass star.
+    - Title: Sculpted `DREADVEIL` (`text-[46px]`–`[50px]` on desktop) with `ADVENTURES` (`tracking-[0.42em]`) and centered 2-line whisper tagline.
+    - Three main menu plaques (width ~34vw, height ~64px, tighter gap): New Expedition (8-spoke sunburst), The Descent (winged caduceus/dagger), Continue Run (heraldic crest shield).
     - Bottom-left navigation: `left: 5.5vw`, `bottom: 4.5vh`, with melting altar candlelight cluster and small-caps links (`BESTIARY`, `DICE ARSENAL`, `CHRONICLES`, `SETTINGS`).
-    - Bottom-right Current Adventurer panel: `right: 3.5vw`, `bottom: 4.5vh`, `width: 25.5vw` (max 370px), with square character portrait, species/class lore, and a single row of 6 sculpted tactile polyhedral dice wireframes with etched face numbers (`d4`–`d20`).
+    - Bottom-Right Current Adventurer panel: `right: 3.5vw`, `bottom: 4.5vh`, `width: 25.5vw` (max 370px), vertically compact with square character portrait, species/class lore, and a single row of 6 tactile polyhedral dice wireframes with bold etched face numbers (`d4`–`d20`) and enhanced gold luster.
+  - The Dying Gods Combat Arena (`src/routes/play.tsx`):
+    - Upper-Left: Main enemy artwork container with `src/assets/mire-hound.jpg`, upper edge vitality track, boss title, live HP, and threat medallion (grade 8).
+    - Upper-Right: Parchment vellum lore and intent panel (`#D6C7A5`), creature lore, intent icon, attack/guard value, and narrative intent description.
+    - Lower-Left: Player character panel with master roster portrait, role, hybrid class, vitality track, and 3 status sigils.
+    - Lower-Middle: Polyhedral dice tray displaying 6 physical dice (`d4`, `d6`, `d8`, `d10`, `d12`, `d20`), interactive 3-die active loadout slots, and three wide action plaques (`STRIKE`, `GUARD`, `REROLL (N)`).
+    - Lower-Right: Signature ability card with arcane icon, title, description, and interactive Invoke trigger.
   - Antique bestiary, dark iron frame, aged parchment card textures, muted bronze, candlelight, and dark teal atmospheric shadows.
   - Expressive monstrous hybrid creature artwork cropped from a unified 10-species roster sheet.
   - Classic serif and antique headings (`IM Fell English SC`, `Spectral`).
